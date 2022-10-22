@@ -36,7 +36,6 @@ def choise():
 
 choise()
 
-# C:\Users\sch1561-it-064\Downloads
 
 save_path = input("Куда сохранить:\n")
 
