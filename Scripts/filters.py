@@ -1,5 +1,6 @@
+import os
 from random import *
-
+from PIL import Image
 
 def grey_world(img):
     for i in range(img.width):
@@ -83,3 +84,13 @@ def mate_four(img):
                 g = g + 50
 
             img.putpixel((i, j), (r, g, b))
+
+
+def kek(img):
+    crop = (img.width//2, 0, img.width, img.height)
+    paste = (0, 0, img.width//2, img.height)
+    crop_part = img.crop(crop)
+    crop_part.save("crop_part.png")
+    rotate_part = crop_part.transpose(Image.FLIP_LEFT_RIGHT)
+    img.paste(rotate_part, paste)
+    os.remove("crop_part.png")
